@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     #region Objects & Headers
     private Rigidbody2D rb;
     private Animator anim;
     private CapsuleCollider2D col;
 
-    private bool canBeControlled;
+    private bool canBeControlled = true;
     private float defaultGravityScale;
 
 
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         defaultGravityScale = rb.gravityScale;
-        RespawnFinished(false);
+        //RespawnFinished(false);
     }
 
     // Update is called once per frame
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         HandleCollision();
         HandleAnimation();
 
-        RespawnFinished(canBeControlled);
+        //RespawnFinished(canBeControlled);
     }
 
     public void RespawnFinished(bool finished)
